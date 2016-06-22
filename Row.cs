@@ -19,9 +19,12 @@ namespace Excel
         public void ExpandCells(int NumberOfColumns)
         {
             Cells = new Cell[NumberOfColumns];
-            foreach (var cell in FilledCells)
-                Cells[cell.ColumnIndex] = cell;
-            FilledCells = null;
+            if (FilledCells != null)
+            {
+                foreach (var cell in FilledCells)
+                    Cells[cell.ColumnIndex] = cell;
+                FilledCells = null;
+            }
         }
     }
 }

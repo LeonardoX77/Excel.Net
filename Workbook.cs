@@ -18,6 +18,7 @@ namespace Excel
     public class Workbook
     {
         public static sst SharedStrings;
+        public static WorkbookDefinition WorkbookDefinition { get; private set; }
 
         /// <summary>
         /// All worksheets in the Excel workbook deserialized
@@ -31,6 +32,10 @@ namespace Excel
             using (ZipArchive zipArchive = ZipFile.Open(ExcelFileName, ZipArchiveMode.Read))
             {
                 SharedStrings = DeserializedZipEntry<sst>(GetZipArchiveEntry(zipArchive, @"xl/sharedStrings.xml"));
+
+                var workBookEntry = zipArchive.Entries.FirstOrDefault(c => c.FullName == "xl/workbook.xml");
+                WorkbookDefinition = DeserializedZipEntry<Excel.WorkbookDefinition>(workBookEntry);
+
                 foreach (var worksheetEntry in (WorkSheetFileNames(zipArchive)).OrderBy(x => x.FullName))
                 {
                     ws = DeserializedZipEntry<worksheet>(worksheetEntry);

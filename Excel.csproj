@@ -47,7 +47,11 @@
     <Compile Include="Row.cs" />
     <Compile Include="SharedStrings.cs" />
     <Compile Include="Workbook.cs" />
+    <Compile Include="WorkbookDefinition.cs" />
     <Compile Include="Worksheet.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="README.md" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

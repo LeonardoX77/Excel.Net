@@ -14,6 +14,7 @@ namespace Excel
     /// </summary>
     public class Cell
     {
+        private string _CellReference = "";
         /// <summary>
         /// Used for converting from Excel column/row to column index starting at 0
         /// </summary>
@@ -22,15 +23,20 @@ namespace Excel
         {
             get
             {
-                return ColumnIndex.ToString();
+                return _CellReference;
             }
             set
             {
+                _CellReference = value;
+
                 ColumnIndex = GetColumnIndex(value);
                 if (ColumnIndex > worksheet.MaxColumnIndex)
                     worksheet.MaxColumnIndex = ColumnIndex;
             }
         }
+
+
+
         [XmlAttribute("t")]
         public string tType = "";
         /// <summary>
