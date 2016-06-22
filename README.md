@@ -9,7 +9,7 @@ This is a library for reading Excel (xlst) content files. The code is based on t
 
 This work is based on Dietmar Paul Schoder article and I only added a small functionality to read Defined Names (used commonly in formulas) and fix some little errors I found on the way.
 
-Here you can see his amazin article:
+Here you can see his amazing article:
 
 [http://www.codeproject.com/Tips/801032/Csharp-How-To-Read-xlsx-Excel-File-With-Lines-of?msg=5263516#xx5263516xx](http://www.codeproject.com/Tips/801032/Csharp-How-To-Read-xlsx-Excel-File-With-Lines-of?msg=5263516#xx5263516xx)
 
