@@ -43,7 +43,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Cell.cs" />
+    <Compile Include="Export\ExelExport.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReflectionTool.cs" />
     <Compile Include="Row.cs" />
     <Compile Include="SharedStrings.cs" />
     <Compile Include="Workbook.cs" />
